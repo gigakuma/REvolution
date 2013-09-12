@@ -1,0 +1,9 @@
+﻿<Window x:Class="REvolution.SyntaxTreeVisualized"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:REvolution.Visualizer"
+        Title="SyntaxTreeVisualized" Height="600" Width="800">
+    <Grid>
+        <c:SyntaxViewer x:Name="Viewer"></c:SyntaxViewer>
+    </Grid>
+</Window>

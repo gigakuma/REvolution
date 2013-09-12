@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="REvolution.Editor.SymbolEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="clr-namespace:REvolution.Editor"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="5">
+        <Grid>
+            <Border Height="30" VerticalAlignment="Top" CornerRadius="5,5,0,0" BorderBrush="White" BorderThickness="0,1,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#DDEEFF" />
+                        <GradientStop Offset="0.8" Color="White" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Width="17" Height="17" Margin="5" Padding="0" Name="AddExp" Click="AddExp_Click"></Button>
+                    <TextBlock Height="26" HorizontalAlignment="Left" Margin="5,5,0,0" Name="Title" Text="" VerticalAlignment="Top" Foreground="#224488"/>
+                </StackPanel>
+            </Border>
+            <TextBlock Height="20" Margin="5,30,5,0" VerticalAlignment="Top" Foreground="#2bb600" FontFamily="Courier New">Comment</TextBlock>
+            
+            <TextBox Name="Comment" Height="50" TextWrapping="Wrap" Foreground="#555" Margin="5,50,5,0" VerticalAlignment="Top" TextChanged="Comment_TextChanged"></TextBox>
+            <Border Name="Warning" Background="#99fdf130" Height="22" VerticalAlignment="Top" Margin="10,55,10,0" CornerRadius="10" IsHitTestVisible="False" Opacity="1">
+                <Border.Resources>
+                    <Storyboard x:Key="ShowWarning" Name="ShowWarning">
+                        <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Warning" To="1" Duration="0:0:0.2" />
+                    </Storyboard>
+                    <Storyboard x:Key="HideWarning" Name="HideWarning">
+                        <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Warning" To="0" Duration="0:0:0.2" />
+                    </Storyboard>
+                </Border.Resources>
+                <TextBlock Padding="5" Foreground="#cb980f" FontFamily="Courier New" FontSize="11" VerticalAlignment="Center">You'd better input some comment.</TextBlock> 
+            </Border>
+            <ScrollViewer Margin="0,105,0,0" VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical" Name="ExpList">
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+       
+    </Border>
+</UserControl>

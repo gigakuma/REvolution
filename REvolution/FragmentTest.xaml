@@ -1,0 +1,9 @@
+﻿<Window x:Class="REvolution.FragmentTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:b="clr-namespace:REvolution.Editor"
+        Title="FragmentTest" Height="300" Width="300">
+    <Grid>
+        <b:SymbolEditor Width="200" Height="200"></b:SymbolEditor>
+    </Grid>
+</Window>

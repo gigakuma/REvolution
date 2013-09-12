@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8389F2AC-CF71-485F-AB42-790E99658235}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>REvolution</RootNamespace>
+    <AssemblyName>REvolution</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>en-US</TargetCulture>
+    <ProductName>REvolution</ProductName>
+    <PublisherName>Alven</PublisherName>
+    <SuiteName>REvolution</SuiteName>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>REvolution.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>corona.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8D0F805E99CD861058973B450AA64901FCE8A0EF</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>REvolution_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Core\Builder\Linker.cs" />
+    <Compile Include="Core\Builder\Slots.cs" />
+    <Compile Include="Core\CharUtils.cs" />
+    <Compile Include="Core\Generator\Combiner.cs" />
+    <Compile Include="Core\Symbols\Expression.cs" />
+    <Compile Include="Core\Symbols\Symbol.cs" />
+    <Compile Include="Core\Symbols\SymbolManager.cs" />
+    <Compile Include="Core\Syntax\AnchorType.cs" />
+    <Compile Include="Core\Syntax\AssertDirection.cs" />
+    <Compile Include="Core\Generator\GenerateContext.cs" />
+    <Compile Include="Core\Syntax\DefinitionType.cs" />
+    <Compile Include="Core\Syntax\NodeGroup.cs" />
+    <Compile Include="Core\Syntax\NodeParent.cs" />
+    <Compile Include="Core\Syntax\Nodes\Alternate.cs" />
+    <Compile Include="Core\Syntax\Nodes\Anchor.cs" />
+    <Compile Include="Core\Syntax\Nodes\Balance.cs" />
+    <Compile Include="Core\Syntax\Nodes\Capture.cs" />
+    <Compile Include="Core\Syntax\Nodes\Comment.cs" />
+    <Compile Include="Core\Syntax\Nodes\Greedy.cs" />
+    <Compile Include="Core\Syntax\Nodes\Group.cs" />
+    <Compile Include="Core\Syntax\Nodes\Multi.cs" />
+    <Compile Include="Core\Syntax\Nodes\One.cs" />
+    <Compile Include="Core\Syntax\Nodes\CharClass.cs" />
+    <Compile Include="Core\Syntax\Nodes\Field.cs" />
+    <Compile Include="Core\Syntax\Nodes\Concatenate.cs" />
+    <Compile Include="Core\Syntax\Nodes\Options.cs" />
+    <Compile Include="Core\Syntax\Nodes\Prevent.cs" />
+    <Compile Include="Core\Syntax\Nodes\Range.cs" />
+    <Compile Include="Core\Syntax\Nodes\Reference.cs" />
+    <Compile Include="Core\Syntax\Nodes\Require.cs" />
+    <Compile Include="Core\Syntax\Nodes\Set.cs" />
+    <Compile Include="Core\Syntax\Nodes\Test.cs" />
+    <Compile Include="Core\Syntax\NodeType.cs" />
+    <Compile Include="Core\Syntax\OptionType.cs" />
+    <Compile Include="Core\Syntax\Node.cs" />
+    <Compile Include="Core\Syntax\Charset.cs" />
+    <Compile Include="Core\Syntax\Quantifier.cs" />
+    <Compile Include="Core\Syntax\Definition.cs" />
+    <Compile Include="Core\Syntax\QuantifierType.cs" />
+    <Compile Include="Core\Syntax\SetType.cs" />
+    <Compile Include="Core\Syntax\Token.cs" />
+    <Compile Include="Core\Builder\Lexer.cs" />
+    <Compile Include="Core\Builder\Parser.cs" />
+    <Compile Include="Core\Syntax\TokenType.cs" />
+    <Compile Include="Core\Syntax\Tree.cs" />
+    <Compile Include="Editor\ExpressionItem.xaml.cs">
+      <DependentUpon>ExpressionItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\FragmentUnit.xaml.cs">
+      <DependentUpon>FragmentUnit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\FragmentViewer.xaml.cs">
+      <DependentUpon>FragmentViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\ProductionResult.xaml.cs">
+      <DependentUpon>ProductionResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\SymbolEditor.xaml.cs">
+      <DependentUpon>SymbolEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FragmentTest.xaml.cs">
+      <DependentUpon>FragmentTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SyntaxTreeVisualized.xaml.cs">
+      <DependentUpon>SyntaxTreeVisualized.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizer\ElementGroup.xaml.cs">
+      <DependentUpon>ElementGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizer\Element.xaml.cs">
+      <DependentUpon>Element.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizer\ElementParent.xaml.cs">
+      <DependentUpon>ElementParent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizer\IElement.cs" />
+    <Compile Include="Visualizer\LinkLine.xaml.cs">
+      <DependentUpon>LinkLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizer\SyntaxViewer.xaml.cs">
+      <DependentUpon>SyntaxViewer.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Editor\ExpressionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editor\FragmentUnit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editor\FragmentViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editor\ProductionResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editor\SymbolEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FragmentTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SyntaxTreeVisualized.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualizer\ElementGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualizer\Element.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualizer\ElementParent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualizer\LinkLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualizer\SyntaxViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\checkmark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\delete.png" />
+    <Resource Include="Images\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="corona.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\generator.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

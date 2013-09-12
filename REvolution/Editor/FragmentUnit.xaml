@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="REvolution.Editor.FragmentUnit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="0" d:DesignWidth="0">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
+        <Border Background="#e1efff" BorderBrush="#9ad1ff" BorderThickness="1,1,1,0" Padding="1,1,1,0">
+            <StackPanel Orientation="Vertical">
+                <Border Background="#224488" MouseDown="Border_MouseDown" Name="Head" MouseRightButtonUp="Head_MouseRightButtonUp">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <!--<ColumnDefinition Width="22" />-->
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Name="Title" Foreground="White" Margin="5,2,1,2" FontSize="10" Background="Transparent" BorderBrush="Transparent" Grid.Column="0"  Focusable="False" MouseDoubleClick="Title_MouseDoubleClick" HorizontalAlignment="Left" Text="Test">
+                                <TextBox.Triggers>
+                                    <EventTrigger RoutedEvent="TextBox.MouseDoubleClick">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="Submit" Storyboard.TargetProperty="Width" To="20" Duration="0:0:0.2" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </TextBox.Triggers>
+                            </TextBox>
+                            <Border Name="Submit" Width="0" Height="20" Margin="2" Background="#4fb7ff" MouseUp="Submit_MouseUp">
+                                <Image Source="/REvolution;component/Images/checkmark.png" Stretch="None" />
+                                <Border.Triggers>
+                                    <EventTrigger RoutedEvent="Border.MouseUp">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="Width" To="0" Duration="0:0:0.2" />
+                                                <ColorAnimation Storyboard.TargetProperty="Background.Color" To="#a3d9ff" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="Border.MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="Background.Color" To="#a3d9ff" Duration="0:0:0.2" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="Border.MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="Background.Color" To="#4fb7ff" Duration="0:0:0.2" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="Border.MouseDown">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="Background.Color" To="#0064aa" Duration="0:0:0.2" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Border.Triggers>
+                            </Border>
+                        </StackPanel>
+                        <!--<Border Width="20" Height="20" Background="AliceBlue" Grid.Column="1" Margin="0,0,2,0"></Border>-->
+                    </Grid>
+                    
+                </Border>
+                <StackPanel Orientation="Horizontal" Name="Container" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</UserControl>
